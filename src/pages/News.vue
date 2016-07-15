@@ -20,152 +20,23 @@
               <tr>
                 <th>新闻标题</th>
                 <th>分类</th>
-                <th>推荐人</th>
                 <th>推荐值</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="title"><a href="#">自己动手写 chrome 天气扩展</a></td>
-                <td><a href="#">Chrome</a></td>
-                <td><a href="#">Scotte</a></td>
+                <td>Chrome</td>
                 <td class="star">❤ ❤ ❤ ❤</td>
               </tr>
 
-              <tr>
-                <td class="title"><a href="#">每周都会收集有意思的一些东西，通过 RSS 推送给大家</a></td>
-                <td><a href="#">RSS</a></td>
-                <td><a href="#">MiYogurt</a></td>
-
-                <td class="star">❤ ❤</td>
-              </tr>
 
               <tr>
-                <td class="title"><a href="/1">三天搞定 Python - 知乎专栏 ·「Jiang 的金融窝」</a></td>
-                <td><a href="#">Python</a></td>
-                <td><a href="#">大大大大大大大大大大大大表哥</a></td>
-                <td class="star">❤ ❤</td>
-              </tr>
-              <tr>
-                <td class="title"><a href="#">自己动手写 chrome 天气扩展</a></td>
-                <td><a href="#">Chrome</a></td>
-                <td><a href="#">Scotte</a></td>
+                <td class="title"><a href="#123">自己动手写 chrome 天气扩展</a></td>
+                <td>Chrome</td>
                 <td class="star">❤ ❤ ❤ ❤</td>
               </tr>
 
-              <tr>
-                <td class="title"><a href="/123">每周都会收集有意思的一些东西，通过 RSS 推送给大家</a></td>
-                <td><a href="#">RSS</a></td>
-                <td><a href="#">MiYogurt</a></td>
-
-                <td class="star">❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="/123">三天搞定 Python - 知乎专栏 ·「Jiang 的金融窝」</a></td>
-                <td><a href="#">Python</a></td>
-                <td><a href="#">大大大大大大大大大大大大表哥</a></td>
-                <td class="star">❤ ❤</td>
-              </tr>
-                            <tr>
-                <td class="title"><a href="#">自己动手写 chrome 天气扩展</a></td>
-                <td><a href="#">Chrome</a></td>
-                <td><a href="#">Scotte</a></td>
-                <td class="star">❤ ❤ ❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="">每周都会收集有意思的一些东西，通过 RSS 推送给大家</a></td>
-                <td><a href="#">RSS</a></td>
-                <td><a href="#">MiYogurt</a></td>
-
-                <td class="star">❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="">三天搞定 Python - 知乎专栏 ·「Jiang 的金融窝」</a></td>
-                <td><a href="#">Python</a></td>
-                <td><a href="#">大大大大大大大大大大大大表哥</a></td>
-                <td class="star">❤ ❤</td>
-              </tr>
-                            <tr>
-                <td class="title"><a href="">自己动手写 chrome 天气扩展</a></td>
-                <td><a href="#">Chrome</a></td>
-                <td><a href="#">Scotte</a></td>
-                <td class="star">❤ ❤ ❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="">每周都会收集有意思的一些东西，通过 RSS 推送给大家</a></td>
-                <td><a href="#">RSS</a></td>
-                <td><a href="#">MiYogurt</a></td>
-
-                <td class="star">❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="#">三天搞定 Python - 知乎专栏 ·「Jiang 的金融窝」</a></td>
-                <td><a href="#">Python</a></td>
-                <td><a href="#">大大大大大大大大大大大大表哥</a></td>
-                <td class="star">❤ ❤</td>
-              </tr>
-                            <tr>
-                <td class="title"><a href="">自己动手写 chrome 天气扩展</a></td>
-                <td><a href="#">Chrome</a></td>
-                <td><a href="#">Scotte</a></td>
-                <td class="star">❤ ❤ ❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="">每周都会收集有意思的一些东西，通过 RSS 推送给大家</a></td>
-                <td><a href="#">RSS</a></td>
-                <td><a href="#">MiYogurt</a></td>
-
-                <td class="star">❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="#">三天搞定 Python - 知乎专栏 ·「Jiang 的金融窝」</a></td>
-                <td><a href="#">Python</a></td>
-                <td><a href="#">大大大大大大大大大大大大表哥</a></td>
-                <td class="star">❤ ❤</td>
-              </tr>
-                            <tr>
-                <td class="title"><a href="#">自己动手写 chrome 天气扩展</a></td>
-                <td><a href="#">Chrome</a></td>
-                <td><a href="#">Scotte</a></td>
-                <td class="star">❤ ❤ ❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="#">每周都会收集有意思的一些东西，通过 RSS 推送给大家</a></td>
-                <td><a href="#">RSS</a></td>
-                <td><a href="#">MiYogurt</a></td>
-
-                <td class="star">❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="">三天搞定 Python - 知乎专栏 ·「Jiang 的金融窝」</a></td>
-                <td><a href="#">Python</a></td>
-                <td><a href="#">大大大大大大大大大大大大表哥</a></td>
-                <td class="star">❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="">每周都会收集有意思的一些东西，通过 RSS 推送给大家</a></td>
-                <td><a href="#">RSS</a></td>
-                <td><a href="#">MiYogurt</a></td>
-
-                <td class="star">❤ ❤</td>
-              </tr>
-
-              <tr>
-                <td class="title"><a href="#">三天搞定 Python - 知乎专栏 ·「Jiang 的金融窝」</a></td>
-                <td><a href="#">Python</a></td>
-                <td><a href="#">大大大大大大大大大大大大表哥</a></td>
-                <td class="star">❤ ❤</td>
-              </tr>
             </tbody>
           </table>
 <v-pagination></v-pagination>

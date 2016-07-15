@@ -87,7 +87,7 @@
 
                   <fieldset class="form-group row">
                     <div class="col-lg-12">
-                      <button type="submit" class="btn btn-sm btn-mint-outline pull-right">登录</button>
+                      <button type="submit" class="btn btn-sm btn-mint-outline pull-right">提交</button>
                     </div>
                   </fieldset>
 

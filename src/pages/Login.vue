@@ -27,7 +27,7 @@
                   <fieldset class="form-group row">
                     <div class="col-lg-12">
                       <button type="submit" class="btn btn-sm btn-mint-outline  pull-right">登录</button>
-                      <span class="f1rem">没有账号？那就快 <a href="#" class="text-danger">注册</a> 吧</span>
+                      <span class="f1rem">没有账号？那就快 <a <a v-link="{path:'register'}" class="text-danger">注册</a> 吧</span>
                     </div>
                   </fieldset>
 

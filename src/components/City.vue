@@ -20,18 +20,20 @@
 
 
 <style lang="stylus" scoped>
+@import '../assets/variables.styl'
 .card-block
   padding 5px 10px
   a
     display inline-block
     color #3A2F2E
-    background #E2E2E2
     padding .2em 1em
     border-radius 5px
     margin .3em 0
     font-size 1rem
+    border 1px solid #fff
     &:hover
       text-decoration none
-      background #ccc
+      border 1px solid $mcol
+      color $mcol
 
 </style>

@@ -67,7 +67,7 @@ export default {
   line-height 1
   span
     font-size 8em
-    color $mred
+    color $mcol
 .foot_link
   ul
     padding 0

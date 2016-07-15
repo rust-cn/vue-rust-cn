@@ -2,8 +2,8 @@
 <div class="list-group">
 
     <div class="list-group-item">
-      <div class="list-group-item-heading" href="#">
-        <span class="label label-r">R</span><a href="/some" class="title">活动交互设计二三事</a>
+      <div class="list-group-item-heading">
+        <span class="label label-r">R</span><a v-link="{ name: 'article', params: { article_id: 123 }}" href="/some" class="title">活动交互设计二三事</a>
         <span class="pull-right">
           <img src="http://temp.im/466x466/4CD964/fff" style="width: 20px">
         </span>

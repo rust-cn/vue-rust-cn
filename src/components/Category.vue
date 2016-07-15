@@ -91,5 +91,5 @@
         border-bottom 1px solid #fff
         &:hover
           text-decoration none
-          border-bottom 1px solid $mred
+          border-bottom 1px solid $mcol
 </style>

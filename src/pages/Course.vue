@@ -156,7 +156,7 @@ p.f1rem
 
 h5
   display inline-block
-  border-bottom 1px solid $mred
+  border-bottom 1px solid $mcol
   padding 0 1em
 .container
   margin-top 20px
@@ -175,7 +175,7 @@ h5
       color #333
       font-size .9rem
       &:hover
-        color $mred
+        color $mcol
   .card-block
     padding 0
     p

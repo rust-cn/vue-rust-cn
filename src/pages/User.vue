@@ -6,7 +6,8 @@
             <div class="card">
 
               <div class="card-block">
-                  <a class="btn btn-sm btn-mint-outline pull-right" href="#">设置</a>
+                  <a class="btn btn-sm btn-info-outline pull-right" v-if="login_user_id == $route.params.user_id">注销</a>
+                  <a class="btn btn-sm btn-mint-outline pull-left" v-if="login_user_id" v-link="{name:'setting'}">设置</a>
 
                 <div class="text-center" style="clear: right">
                   <img class="img-circle user-face" src="https://ruby-china-files.b0.upaiyun.com/user/big_avatar/11178.jpg">
@@ -193,7 +194,14 @@ export default {
     VFooter
   },
   data () {
+    let login_user_id = sessionStorage.user_id ? parseInt(sessionStorage.user_id) : 0
+
     return {
+      login_user_id: login_user_id
+    }
+  },
+  methods: {
+    init(){
 
     }
   }

@@ -14,48 +14,60 @@ import Article from './pages/Article'
 import User from './pages/User'
 import Setting from './pages/Setting'
 
-/* eslint-disable no-new */
-// new Vue({
-//   el: 'body',
-//   components: { App }
-// })
-
 Vue.use(Router)
 
 let router = new Router()
 
 router.map({
     '/': {
+        name: 'index',
+
         component: Hello
     },
     '/community': {
+        name: 'community',
+
         component: Community
     },
     '/employment': {
+        name: 'employment',
+
         component: Employment
     },
     '/wiki': {
+        name: 'wiki',
+
         component: Wiki
     },
     '/course': {
+        name: 'course',
+
         component: Course
     },
     '/register': {
+        name: 'register',
+
         component: Register
     },
     '/login': {
+        name: 'login',
+
         component: Login
     },
     '/news': {
+        name: 'news',
         component: News
     },
-    '/article': {
+    '/article/:article_id': {
+        name: 'article',
         component: Article
     },
-    '/user': {
+    '/user/:user_id': {
+        name: 'user',
         component: User
     },
     '/setting': {
+        name: 'setting',
         component: Setting
     }
 

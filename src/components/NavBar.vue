@@ -8,23 +8,23 @@
         <div class="collapse navbar-toggleable-sm {{ nav_satus?'show':'hidden' }}">
           <a class="navbar-brand site_name" href="/"><b>Rust</b> China</a>
           <ul class="nav navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item" :class="{'active': navStatus('community')}">
               <a class="nav-link" v-link="{ path: '/community' }">社区<span class="label label-circle"></span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" :class="{'active': navStatus('course')}">
               <a class="nav-link" v-link="{ path: '/course' }">教程<span class="label label-circle"></span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" :class="{'active': navStatus('employment')}">
               <a class="nav-link" v-link="{ path: '/employment' }">招聘<span class="label label-circle"></span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" :class="{'active': navStatus('news')}">
               <a class="nav-link" v-link="{ path: '/news' }">News<span class="label label-circle"></span></a>
             </li>
 
-            <li class="nav-item">
+            <li class="nav-item" :class="{'active': navStatus('wiki')}">
               <a class="nav-link" v-link="{ path: '/wiki' }">Wiki<span class="label label-circle"></span></a>
             </li>
 
@@ -33,7 +33,13 @@
 
           </ul>
 
-          <ul class="nav navbar-nav pull-right">
+          <div class="nav navbar-nav pull-right" v-if="user_id">
+            <a href="#" v-link="{name:'user',params:{'user_id': user_id}}">
+              <img class="face_img" :src="face_img" />
+            </a>
+          </div>
+
+          <ul class="nav navbar-nav pull-right"  v-else>
             <li class="nav-item">
               <a class="btn btn-sm btn-mint-outline" v-link="{ path: '/register' }">注册</a>
             </li>
@@ -41,6 +47,7 @@
               <a class="btn btn-sm btn-mint" v-link="{ path: '/login' }">登录</a>
             </li>
           </ul>
+
         </div>
     </div>
   </nav>
@@ -53,7 +60,9 @@
 export default {
   data () {
     return {
-      nav_satus: false
+      nav_satus: false,
+      user_id: sessionStorage.user_id ? sessionStorage.user_id: '',
+      face_img: sessionStorage.face_img ? sessionStorage.face_img: 'http://temp.im/30x30/007AFF/fff'
     }
   },
   props:{
@@ -69,11 +78,19 @@ export default {
   methods: {
     toggle(){
       this.nav_satus = !this.nav_satus
-    }
+    },
+    navStatus(path){
+      return this.$route.path.indexOf(path) > 0
+    },
+
   },
   ready (){
       $('#to_top').click(function(){
         $('html, body').animate({scrollTop:0}, 'slow');
+        if ($('.right-all')) {
+          $('.right-all').css('top',$(document).scrollTop())
+        }
+
       });
       window.onscroll = function() {
         let nav = document.getElementById('top_nav')
@@ -104,6 +121,10 @@ export default {
 
 <style lang="stylus" scoped>
 @import '../assets/variables.styl'
+
+.face_img
+  height 30px
+  width 30px
 
 .navbar
   // border-radius none !important
@@ -143,7 +164,7 @@ button:focus
 .r_nav_bar
   line-height 1
   .navbar-nav .nav-item.active a.nav-link .label
-    background $mred
+    background $mcol
   .navbar-nav
     &.pull-right .nav-item
       top 0
@@ -158,7 +179,7 @@ button:focus
       &:hover
         color rgba(0,0,0,.8)
         .label
-          background $mred
+          background $mcol
       .label
         display inline-block
         position absolute
@@ -169,14 +190,14 @@ button:focus
     font-size 1.5em
     padding 0
     b
-      color $mred
+      color $mcol
 
 
 @media screen and (max-width: 800px)
   .btn-mint-outline
     background-color #fff
   .btn-mint-outline:hover
-    background-color $mred
+    background-color $mcol
     color $fff
   .breadcrumb>li, .navbar-brand, .navbar-nav .nav-item
     float none

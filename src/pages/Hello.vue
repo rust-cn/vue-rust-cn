@@ -90,7 +90,6 @@ export default {
     padding-left 0
 
 
-
 .read-more
   &:hover
     color #778087 !important

@@ -57,25 +57,30 @@ export default {
 @import '../assets/variables.styl'
 
 .post-pagination
+  text-align center
+  border-top 1px dotted #f0f0f0
   .pagination
     padding 0
+    margin-top .7rem
+    margin-bottom .7rem
 
 .pagination .page-item
   display inline-block
   text-align center
   &.active
     a
-      background $mred
+      background $mcol
       color #fff
 
   a
     border-radius: 3px
     margin 0 .1rem
-    padding 0.25rem 0.8rem
+    padding 0.25rem 1.5rem
     text-decoration none
     color grey
+    transition all .4s
     &:hover
-      background $mred
+      background $mcol
       color #fff
 
 </style>
