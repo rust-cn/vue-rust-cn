@@ -1,21 +1,28 @@
 <template>
 <div class="list-group">
 
-    <div class="list-group-item">
+
+    <div class="list-group-item"  v-for="item in content">
+
       <div class="list-group-item-heading">
-        <span class="label label-r">R</span><a v-link="{ name: 'article', params: { article_id: 123 }}" href="/some" class="title">活动交互设计二三事</a>
+
+        <span class="label label-g" v-if="item.label.g">G</span><span class="label label-j" v-if="item.label.j">J</span><span class="label label-r" v-if="item.label.r">R</span><span class="label label-t" v-if="item.label.t">T</span>
+
+        <a v-link="{ name: 'article', params: { article_id: item.id }}" class="title" v-text="item.title"></a>
         <span class="pull-right">
-          <img src="http://temp.im/466x466/4CD964/fff" style="width: 20px">
+          <img :src=item.author.face_img style="width: 20px">
         </span>
       </div>
+
       <p class="list-group-item-text clearfix">
-        <a href="#">原创</a> · 由 <a href="#">飘雪</a> 于 21 小时前回复
+        <a href="#" v-text="item.category"></a> · 由 <a v-link="{ name: 'user', params: { user_id : item.last_comment.user_id}}" v-text="item.last_comment.user_name"></a> 于{{item.last_comment.last_time}}回复
         <span class="pull-right">
-          <a href="#">龙菲儿</a>
+          <a v-link="{ name: 'user', params: { user_id : item.author.id } }" v-text="item.author.name"></a>
         </span>
       </p>
     </div>
 
+<!--
     <div class="list-group-item">
       <div class="list-group-item-heading" href="#">
         <span class="label label-r">R</span><a href="/222" class="title">同构化的 React + Redux 服务端渲染</a>
@@ -144,21 +151,68 @@
       </p>
     </div>
 
+ -->
 
 
 </div>
 </template>
 
 <script>
+import { getList } from '../api/getList'
+
 export default {
+  props: ['page','category','url','node'],
   data () {
-    return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'ByeBye World!'
+    let source
+
+    console.log(this.page,this.url,this.node)
+
+    if (this.node) {
+
+      getList( (api) => {
+        source = api
+      },this.page, this.url , parseInt(this.node))
+
+    }else{
+
+      getList( (api) => {
+        source = api
+      },this.page, this.url , this.category)
+
     }
+
+    console.log(source)
+
+    if (source.current_page) {
+      this.$dispatch('setPaginationStatus',source.current_page,source.all_page)
+    }
+
+    return {
+      current_page: source.current_page?source.current_page:1,
+      all_page: source.all_page?source.all_page:1,
+      page_size: source.page_size?source.page_size:1,
+      content: source.content
+    }
+  },
+  watch: {
+    page(){
+      this.updateList(this.page)
+    },
+    category(){
+
+      this.updateList(this.page)
+    }
+  },
+  methods: {
+    updateList(page){
+
+      getList( (api) => {
+        this.current_page = api.current_page
+        this.content = api.content
+
+      }, page, this.url ,this.category)
+    }
+
   }
 }
 </script>
@@ -203,6 +257,7 @@ a.title:hover
       float right
       width 20px
       height 20px
+      // border .5px solid #d8d8d8
 
 .list-group-item-text
   font-size .8rem

@@ -11,13 +11,13 @@
               <div class="card-block">
 
                 <form class="form-horizontal">
-                  <fieldset class="form-group row">
+                  <fieldset class="form-group row" :class="{'has-error': emailError}">
                     <label for="inputEmail" class="col-lg-2 control-label"><strong>邮箱</strong></label>
                     <div class="col-lg-10">
                       <input type="email" v-model="userInput.email" class="form-control" id="inputEmail" placeholder="Email">
                     </div>
                   </fieldset>
-                  <fieldset class="form-group row">
+                  <fieldset class="form-group row" :class="{'has-error': usernameError}">
                     <label for="inputPassword" class="col-lg-2 control-label"><strong>用户名</strong></label>
                     <div class="col-lg-10">
                       <input type="text" v-model="userInput.username" class="form-control" id="inputPassword" placeholder="Username">
@@ -39,7 +39,7 @@
 
                   <fieldset class="form-group row">
                     <div class="col-lg-12">
-                      <button @click="register" class="btn btn-sm btn-mint-outline pull-right">注册</button>
+                      <button @click.prevent="register" class="btn btn-sm btn-mint-outline pull-right">注册</button>
                       <span class="f1rem">已有账号？那就快 <a v-link="{path:'login'}" class="text-danger">登陆</a> 吧</span>
                     </div>
                   </fieldset>
@@ -89,6 +89,8 @@ export default {
     return {
       confirmError: false,
       passwordError: false,
+      usernameError: false,
+      emailError: false,
       message: '',
       userInput:{
         email: '',
@@ -112,18 +114,43 @@ export default {
         this.timer = setTimeout(() => {
           this.passwordError = false
         }, 3000)
+    },
+    usernameError(){
+      clearTimeout(this.timer)
+
+        this.timer = setTimeout(() => {
+          this.usernameError = false
+        }, 3000)
+    },
+    emailError(){
+        clearTimeout(this.timer)
+
+        this.timer = setTimeout(() => {
+          this.emailError = false
+        }, 3000)
     }
   },
   methods: {
     register(){
-      console.log('click')
+      console.log('click register')
+
+      if (this.userInput.email.length <= 0) {
+        this.emailError=true
+        this.message='邮箱不能为空！'
+        return
+      }
+
+      if (this.userInput.username.length <= 0) {
+        this.usernameError=true
+        this.message='用户名不能为空！'
+        return
+      }
 
       if (this.userInput.password.length < 6) {
         this.passwordError=true
         this.message='密码长度必须大于6位！'
         return
       }
-
 
       console.log(this.userInput.password == this.userInput.confirmPassword)
       if (this.userInput.password == this.userInput.confirmPassword) {
@@ -142,7 +169,7 @@ export default {
                   }
               })
       }else{
-        this.confirmError=true
+        this.confirmError = true
         this.message='密码与确认密码不一致，请确认！'
       }
 
@@ -169,4 +196,7 @@ hr
   color #f0f0f0
 .has-error input
   border 1px solid red
+
+.btn
+  outline none
 </style>

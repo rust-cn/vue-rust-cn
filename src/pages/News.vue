@@ -1,5 +1,6 @@
 <template>
   <v-nav-bar></v-nav-bar>
+  <v-message :message="message"></v-message>
   <div class="container">
         <div class="row">
           <div class="col-md-9 col-sm-12 col-xs-12 animated slideInLeft">
@@ -16,30 +17,26 @@
 
 
                 <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>新闻标题</th>
-                <th>分类</th>
-                <th>推荐值</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="title"><a href="#">自己动手写 chrome 天气扩展</a></td>
-                <td>Chrome</td>
-                <td class="star">❤ ❤ ❤ ❤</td>
-              </tr>
+                  <thead>
+                    <tr>
+                      <th>新闻标题</th>
+                      <th>分类</th>
+                      <th>推荐值</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr v-for="item in content">
+                      <td class="title"><a href="{{item.url}}">{{item.title}}</a></td>
+                      <td>{{ item.category }}</td>
+                      <td class="star"><span v-for="cout in item.star">❤ </span></td>
+                    </tr>
 
 
-              <tr>
-                <td class="title"><a href="#123">自己动手写 chrome 天气扩展</a></td>
-                <td>Chrome</td>
-                <td class="star">❤ ❤ ❤ ❤</td>
-              </tr>
+                  </tbody>
+                </table>
 
-            </tbody>
-          </table>
-<v-pagination></v-pagination>
+                <v-pagination :current-page="currentPage" :all-page="allPage"></v-pagination>
 
               </div>
             </div>
@@ -58,7 +55,8 @@ import VTip from '../components/Tip'
 import VAc from '../components/Announcement'
 import VFooter from '../components/Footer'
 import VPagination from '../components/Pagination'
-
+import VMessage from '../components/Message'
+import { getList } from '../api/getList'
 
 export default {
   components:{
@@ -66,11 +64,50 @@ export default {
     VAc,
     VTip,
     VFooter,
-    VPagination
+    VPagination,
+    VMessage
   },
   data () {
-    return {
+    let currentPage,allPage
 
+     getList( (ret) => {
+        this.content = ret.content
+        currentPage = ret.current_page
+        allPage = ret.all_page
+      }, 1 , "https://api.local/news/list" )
+
+    return {
+      currentPage: currentPage,
+      allPage: allPage,
+      message: ''
+    }
+  },
+  methods:{
+    updateList(){
+      getList( (ret) => {
+        this.content = ret.content
+        this.allPage = ret.all_page
+      }, this.currentPage , "https://api.local/news/list" )
+    }
+  },
+  watch: {
+    currentPage(){
+      this.updateList()
+    }
+  },
+  events:{
+    changePage(page){
+      this.currentPage = page
+    },
+    setPaginationStatus(currentPage,allPage){
+      this.currentPage = currentPage
+      this.allPage = allPage
+    },
+    resetMessage(){
+      this.message = ''
+    },
+    setMessage(msg){
+      this.message = msg
     }
   }
 }

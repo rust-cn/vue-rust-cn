@@ -4,59 +4,34 @@
           节点导航
         </div>
         <div class="card-block">
-          <div class="item">
-              <div class="pull-left cate_dad ofade">Mobile</div>
+          <div class="item" v-for="item in category">
+              <div class="pull-left cate_dad ofade">{{item.name}}</div>
               <div class="content">
-                <a href="#" class="cate">IOS</a>
-                <a href="#" class="cate">Android</a>
-                <a href="#" class="cate">黑莓</a>
-                <a href="#" class="cate">WinPhone</a>
+                <a v-for="cate in item.content" v-link="{ name: 'node',params: {node_id : cate.id}}" class="cate">{{ cate.name }}</a>
               </div>
           </div>
 
-          <div class="item">
-              <div class="pull-left cate_dad ofade">Front-End</div>
-              <div class="content">
-                <a href="#" class="cate">CSS</a>
-                <a href="#" class="cate">JavaScript</a>
-                <a href="#" class="cate">JQuery</a>
-                <a href="#" class="cate">React</a>
-                <a href="#" class="cate">Vue</a>
-                <a href="#" class="cate">Gulp</a>
-                <a href="#" class="cate">Grunt</a>
-                <a href="#" class="cate">Angular</a>
-                <a href="#" class="cate">Typescript</a>
-                <a href="#" class="cate">Dart</a>
-                <a href="#" class="cate">EmberJS</a>
-                <a href="#" class="cate">绝对不会屈服</a>
-                <a href="#" class="cate">@IT</a>
-
-              </div>
-          </div>
-
-        <div class="item">
-              <div class="pull-left cate_dad ofade">Mobile</div>
-              <div class="content">
-                <a href="#" class="cate">IOS</a>
-                <a href="#" class="cate">Android</a>
-                <a href="#" class="cate">黑莓</a>
-                <a href="#" class="cate">WinPhone</a>
-              </div>
-          </div>
-
-        <div class="item">
-              <div class="pull-left cate_dad ofade">活动</div>
-              <div class="content">
-                <a href="#" class="cate">友谊小船</a>
-                <a href="#" class="cate">面向对象</a>
-              </div>
-          </div>
         </div>
 
 
     </div>
 </template>
 
+<script>
+import { getAllNode } from '../api/getAllNode'
+
+export default {
+  data(){
+    let source
+    getAllNode((ret) => {
+      source  = ret
+    })
+    return {
+      category: source.content
+    }
+  }
+}
+</script>
 
 <style lang="stylus" scoped>
 @import '../assets/variables.styl'

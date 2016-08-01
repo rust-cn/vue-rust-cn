@@ -54,6 +54,1064 @@ module.exports = [
       }
 
 
+      if (match[1] === '/get_all_city') {
+        return {
+          content: [
+            {name:'上海',id: 41},
+            {name:'杭州',id: 42},
+            {name:'深圳',id: 43},
+            {name:'西安',id: 44},
+            {name:'广州',id: 45}
+          ]
+        };
+      }
+
+
+      if (match[1] === '/get_all_node') {
+        return {
+          content: [
+            {
+              name: 'Mobile' ,
+              content: [
+                {name:'IOS',id: 16},
+                {name:'Android',id: 11},
+                {name:'黑莓',id: 18},
+                {name:'WinPhone',id: 19}
+              ]
+            },
+
+            {
+              name:'Front-End',
+              content : [
+                {name:'CSS',id: 20},
+                {name:'JavaScript',id: 21},
+                {name:'JQuery',id: 22},
+                {name:'React',id: 23}
+              ]
+            },
+
+            {
+              name:'活动',
+              content : [
+                {name:'友谊小船',id: 24},
+                {name:'面向对象',id: 25}
+              ]
+            }
+
+
+          ]
+        };
+      }
+
+      if (match[1] === '/news/list') {
+        return {
+          current_page: 1,
+          all_page: 3,
+          content: [
+            { title:'分享一篇文章 rust的发展回顾与总结', url: 'http://www.baidu.com',category:'远程',star:3 },
+            { title:'分享一篇文章 rust的发展回顾与总结', url: 'http://www.baidu.com',category:'远程',star:3 },
+            { title:'分享一篇文章 rust的发展回顾与总结', url: 'http://www.baidu.com',category:'远程',star:3 },
+            { title:'分享一篇文章 rust的发展回顾与总结', url: 'http://www.baidu.com',category:'远程',star:3 },
+            { title:'分享一篇文章 rust的发展回顾与总结', url: 'http://www.baidu.com',category:'远程',star:3 },
+
+          ]
+        };
+      }
+
+      if (match[1] === '/other_wiki') {
+        return {
+          content: [
+            { title:'分享一篇文章 rust的发展回顾与总结',url:'' },
+            { title:'Cargo -- Rust 的 npm',url:'' },
+            { title:'Cargo -- Rust 的 npm',url:'' },
+            { title:'可以发表情啦',url:'' },
+            { title:'可以发表情啦',url:'' },
+            { title:'如何提取安装包或者发布自己写好的软件如何提取安装包或者发布自己写好的软件如何提取安装包或者发布自己写好的软件',url:'' }
+          ]
+        };
+      }
+
+      if (match[1] === '/index/hot') {
+        return {
+          content: [
+            {
+              id: 4,
+              title: '同构化的 React + Redux 服务端渲染',
+              category: '原创',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: true,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'18岁的老爷爷',
+                last_time: '2分钟前'
+              }
+            },
+            {
+              id: 23,
+              title: '让我们共建中国Rust爱好者的社区',
+              category: '原创',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: true,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'18岁的老爷爷',
+                last_time: '2分钟前'
+              }
+            },
+
+
+
+
+          ]
+        };
+      }
+
+    if (match[1] === '/index/list') {
+        return {
+          content:[
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+          ]
+        };
+      }
+
+      if (match[1] === '/wiki') {
+        return {
+          content:[
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+          ]
+        };
+      }
+
+      if (match[1] === '/article/list' || match[1] === '/node') {
+        return {
+          current_page: 1,
+          all_page: 3,
+          page_size: 20,
+          content:[
+            {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '[北京] 幻腾科技寻找 Ruby 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: true,
+                j: false,
+                r: false,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+                      {
+              id: 2,
+              title: '[北京] XX 科技寻找 Rust 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: true,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                      {
+              id: 2,
+              title: '[北京] XX 科技寻找 Rust 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: true,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                                  {
+              id: 2,
+              title: '[北京] XX 科技寻找 Rust 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: true,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                                  {
+              id: 2,
+              title: '[北京] XX 科技寻找 Rust 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: true,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },                      {
+              id: 2,
+              title: '[北京] XX 科技寻找 Rust 后端工程师',
+              category: '招聘',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: true,
+                t: false
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                        {
+              id: 2,
+              title: '我是最厉害的全栈工程师！',
+              category: '扯淡',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: false,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+                                    {
+              id: 2,
+              title: '我是最厉害的全栈工程师！',
+              category: '扯淡',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: false,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+                                    {
+              id: 2,
+              title: '我是最厉害的全栈工程师！',
+              category: '扯淡',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: false,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                                    {
+              id: 2,
+              title: '我是最厉害的全栈工程师！',
+              category: '扯淡',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: false,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+
+                        {
+              id: 2,
+              title: '我是最厉害的全栈工程师！',
+              category: '扯淡',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: false,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                                    {
+              id: 2,
+              title: '我是最厉害的全栈工程师！',
+              category: '扯淡',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: false,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+                                    {
+              id: 2,
+              title: '我是最厉害的全栈工程师！',
+              category: '扯淡',
+              author: {
+                face_img: 'https://ruby-china-files.b0.upaiyun.com/user/large_avatar/21472.jpg',
+                name: 'Tiny',
+                id: 30
+              },
+              label:{
+                g: false,
+                j: false,
+                r: false,
+                t: true
+              },
+              release_time: '11分钟前',
+              last_comment: {
+                user_id: 90,
+                user_name:'飘雪',
+                last_time: '2分钟前'
+              },
+            },
+          ]
+        };
+      }
 
       if (match[1] == '/article') {
         if(params['article_id']) {
@@ -185,11 +1243,19 @@ module.exports = [
      * @param match array Result of the resolution of the regular expression
      * @param data  mixed Data returns by `fixtures` attribute
      */
-    post: function (match, data) {
+    post: function (match, data, params) {
 
       if (match[1] === '/comment') {
         return {
           comment_id: 3
+        };
+      }
+
+      if (match[1] === '/login') {
+        return {
+          user_id: 3,
+          username: 'yugo',
+          face_img: 'http://temp.im/150x150/007AFF/fff'
         };
       }
 

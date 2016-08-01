@@ -1,36 +1,28 @@
 <template>
   <v-nav-bar></v-nav-bar>
+  <v-message :message="message"></v-message>
   <div class="container">
     <div class="row">
         <div class="col-md-9 col-sm-12 col-xs-12">
           <div class="card animated slideInLeft">
               <div class="card-header text-right filter-link">
-                <a href="#" class="active">默认</a>
-                <a href="#">优质内容</a>
-                <a href="#">无人问津</a>
-                <a href="#">最新创建</a>
+                <a href="javascript:;" @click="changeFilter('all')" :class="{'active':category == 'all'}">默认</a>
+                <a href="javascript:;" @click="changeFilter('good')" :class="{'active':category == 'good'}">优质内容</a>
+                <a href="javascript:;" @click="changeFilter('noReplay')" :class="{'active':category == 'noReplay'}">无人问津</a>
+                <a href="javascript:;" @click="changeFilter('newCreate')" :class="{'active':category == 'newCreate'}">最新创建</a>
               </div>
               <div class="card-block post-list">
-                <v-list></v-list>
-                <v-list></v-list>
-                <v-pagination></v-pagination>
+                <v-list :page="listPage" :url="url" :category="category"></v-list>
+
+                <v-pagination :current-page="currentPage" :all-page="allPage"></v-pagination>
               </div>
           </div>
         </div>
         <div class="col-md-3 col-sm-12 col-xs-12 animated slideInRight" id="right-panel">
 
-          <div class="card">
-            <div class="card-block operate">
-              <span><strong>Rust China</strong></span><br>
-              <span class="ofade">做最时髦的开发者社区</span>
-              <hr v-if="!isLogin">
-              <!-- <a href="#" class="btn btn-info btn-block">创建话题</a> -->
-              <div class="text-center" v-if="!isLogin">
-                <a href="#" class="btn btn-mint-outline btn-sm">立即注册</a>
-                <p class="f1rem m0">已经注册的用户，请 <a href="#">登陆</a></p>
-              </div>
-            </div>
-          </div>
+
+
+          <v-login-tip></v-login-tip>
 
           <v-ac></v-ac>
           <v-tip></v-tip>
@@ -57,6 +49,8 @@ import VAd from '../components/Ad'
 import VAc from '../components/Announcement'
 import VFooter from '../components/Footer'
 import VPagination from '../components/Pagination'
+import VLoginTip from '../components/LoginTip'
+import VMessage from '../components/Message'
 
 export default {
   components: {
@@ -68,16 +62,40 @@ export default {
     VAd,
     VAc,
     VFooter,
-    VPagination
+    VPagination,
+    VLoginTip,
+    VMessage
   },
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Community',
-      isLogin: sessionStorage.user_id ? 1 : 0
+      isLogin: sessionStorage.user_id ? 1 : 0,
+      listPage: 1,
+      currentPage: 1,
+      allPage: 1,
+      category: 'all',
+      message: ''
+    }
+  },
+  methods:{
+    changeFilter(category){
+      this.category = category
+      console.log('changed ' + this.category)
+    }
+  },
+  events:{
+    changePage(page){
+      this.listPage = page
+      this.currentPage = page
+    },
+    setPaginationStatus(currentPage,allPage){
+      this.currentPage = currentPage
+      this.allPage = allPage
+    },
+    resetMessage(){
+      this.message = ''
+    },
+    setMessage(msg){
+      this.message = msg
     }
   }
 }
@@ -90,10 +108,6 @@ export default {
 hr
   margin 8px 0
 
-.operate
-  padding 5px 10px
-  .m0
-    margin-top 10px
 
 .ofade
   color #ccc
@@ -110,8 +124,8 @@ hr
   padding 0 .7em
   border-bottom 1px solid #fafafa
   &.active
-    border-bottom 1px solid $mred
+    border-bottom 1px solid $mcol
   &:hover
     text-decoration none
-    border-bottom 1px solid $mred
+    border-bottom 1px solid $mcol
 </style>

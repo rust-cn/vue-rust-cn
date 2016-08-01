@@ -12,9 +12,9 @@
               <a class="nav-link" v-link="{ path: '/community' }">社区<span class="label label-circle"></span></a>
             </li>
 
-            <li class="nav-item" :class="{'active': navStatus('course')}">
+<!--             <li class="nav-item" :class="{'active': navStatus('course')}">
               <a class="nav-link" v-link="{ path: '/course' }">教程<span class="label label-circle"></span></a>
-            </li>
+            </li> -->
 
             <li class="nav-item" :class="{'active': navStatus('employment')}">
               <a class="nav-link" v-link="{ path: '/employment' }">招聘<span class="label label-circle"></span></a>

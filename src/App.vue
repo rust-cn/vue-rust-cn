@@ -11,11 +11,11 @@ let request = require('superagent')
 let config = require('../build//superagent-mock-config')
 let superagentMock = require('superagent-mock')(request, config)
 
-request.get('https://api.local/hero')
-       .send({superhero: 'superman'})
-       .end(function(err, res){
-          console.log(res.body)
-       })
+// request.get('https://api.local/hero')
+//        .send({superhero: 'superman'})
+//        .end(function(err, res){
+//           console.log(res.body)
+//        })
 
 
 export default {

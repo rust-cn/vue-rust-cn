@@ -7,13 +7,13 @@
         <div class="col-md-9 col-sm-12 col-xs-12 animated slideInLeft">
           <div class="card">
               <div class="card-header">
-                <h6>招聘 <span class="f1rem">共有 120 个主题</span></h6>
-                <span class="f1rem">发帖前务必清楚规则： <a href="" class="text-muted">《敬请各位发招聘的公司注意！》</a></span>
+                <h6>节点 /<span class="f1rem"> IOS </span></h6>
+                <!-- <span class="f1rem">发帖前务必清楚规则： <a href="" class="text-muted">《敬请各位发招聘的公司注意！》</a></span>
                 <hr style="margin: .1em 0;border-top: 1px solid #f0f0f0">
-                <span class="f1rem">如果没有权限，或者遇见了问题请邮件联系 <strong>admin@rust-lang-cn.org</strong> 并注明来意，如：请求开通发布招聘帖权限</span>
+                <span class="f1rem">如果没有权限，或者遇见了问题请邮件联系 <strong>admin@rust-lang-cn.org</strong> 并注明来意，如：请求开通发布招聘帖权限</span> -->
               </div>
               <div class="card-block post-list">
-                <v-list :page="listPage" :url="url" :category="category"></v-list>
+                <v-list :page="listPage" :url="url" :node="$route.params.node_id"></v-list>
                 <v-pagination :current-page="currentPage" :all-page="allPage"></v-pagination>
               </div>
           </div>
@@ -72,8 +72,15 @@ export default {
       currentPage: 1,
       allPage: 1,
       category: 'job',
+      url: "https://api.local/node",
       message: ''
     }
+  },
+  computed: {
+
+  },
+  ready(){
+    console.log(this.url)
   },
   events:{
     changePage(page){

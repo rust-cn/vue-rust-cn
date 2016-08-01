@@ -4,16 +4,7 @@
     <div class="container">
         <img src="../assets/logo.png" class="main_logo" style="visibility: hidden ">
         <h3 class="animated fadeInDown">Rust China，Welcome your arrival！<p>Rust 由 Mozilla 开发的一门注重安全、性能和并发的语言。 </p></h3>
-        <div class="hot-post">
-            <div class="post animated fadeInLeft">
-              <a class="title" href="#"><span class="label label-g">G</span><span class="label label-t">T</span> 同构化的 React + Redux 服务端渲染 </a>
-              <div class="description"><a href="#">原创</a> · 由 <a href="">18岁的老爷爷</a> 于 21 小时前回复</div>
-            </div>
-            <div class="post animated fadeInRight">
-              <a class="title" href="#"><span class="label label-r">R</span><span class="label label-j">J</span>让我们共建中国Rust爱好者的社区</a>
-              <div class="description"><a href="#">原创</a> · 由 <a href="">18岁的老爷爷</a> 于 3 分钟前回复</div>
-            </div>
-        </div>
+          <v-hot></v-hot>
     </div>
   </div>
 
@@ -29,10 +20,10 @@
         <div class="card-block">
           <div class="row">
              <div class="col-md-6 col-sm-12 col-xs-12">
-              <list></list>
+              <list :page="listPage" :url="url" category="index1"></list>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
-              <list></list>
+              <list :page="listPage" :url="url" category="index2"></list>
             </div>
           </div>
 
@@ -58,6 +49,7 @@ import List from '../components/List'
 import VCategory from '../components/Category'
 import VCity from '../components/City'
 import VFooter from '../components/Footer'
+import VHot from '../components/Hot'
 
 export default {
   components: {
@@ -65,15 +57,12 @@ export default {
     List,
     VCategory,
     VCity,
-    VFooter
+    VFooter,
+    VHot
   },
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello World!'
+      url: 'https://api.local/index/list',
     }
   }
 }
@@ -124,40 +113,7 @@ export default {
     padding-top 4em
     @media screen and (max-width: 600px)
       padding-top 5.5em
-    .hot-post
-      height 70px
-      position absolute
-      bottom 0
-      left 0
-      right 0
-      background-color rgba(255,255,255,.25)
-      text-align center
-      overflow hidden
-      @media screen and (max-width: 600px)
-          display none
-      .post
-        z-index 5
-        text-align left
-        padding-right 2em
-        padding-top .7em
-        display inline-block
-        color #3A2F2E
-        a
-          color #fff
-        .title
-          display inline-block
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          width: 300px;
-        .description
-          font-size .9rem
-          display block
-          text-align center
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          width: 300px;
+
 
 
     .main_logo

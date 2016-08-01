@@ -4,20 +4,28 @@
           热门城市
         </div>
         <div class="card-block">
-          <div class="text-left">
-            <a href="#">上海</a>
-            <a href="#">北京</a>
-            <a href="#">西安</a>
-            <a href="#">杭州</a>
-            <a href="#">深圳</a>
-            <a href="#">广州</a>
-            <a href="#">厦门</a>
-            <a href="#">其他城市</a>
+          <div class="text-left" >
+            <a v-for="item in city" v-link="{ name: 'node',params: {node_id: item.id} }">{{item.name}}</a>
           </div>
         </div>
     </div>
 </template>
+<script>
 
+import { getAllCity } from '../api/getAllCity'
+
+export default {
+  data(){
+    let source
+    getAllCity((ret) => {
+      source  = ret
+    })
+    return {
+      city: source.content
+    }
+  }
+}
+</script>
 
 <style lang="stylus" scoped>
 @import '../assets/variables.styl'

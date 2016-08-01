@@ -1,17 +1,21 @@
 <template>
 <div class="post-pagination">
   <ul class="pagination">
+
     <li class="page-item">
-        <a href="#pagination">
+        <a href="javascript:;" @click="prev">
           <i class="ion-android-arrow-back"></i>
         </a>
     </li>
-    <li class="page-item">
-        <a href="#pagination">
-            1
+
+
+    <li class="page-item active">
+        <a href="javascript:;">
+            {{ currentPage }}
         </a>
     </li>
-    <li class="page-item">
+
+<!--     <li class="page-item">
         <span>...</span>
     </li>
     <li class="page-item">
@@ -36,9 +40,10 @@
         <a href="#pagination">
             12
         </a>
-    </li>
+    </li> -->
+
     <li class="page-item">
-        <a href="#pagination">
+        <a href="javascript:;" @click="next">
           <i class="ion-android-arrow-forward"></i>
         </a>
     </li>
@@ -49,8 +54,32 @@
 <script>
 
 export default {
+  props: ['currentPage','allPage'],
 
+  methods: {
+    next(){
+      if (this.currentPage >= this.allPage) {
+        console.warn("已经是最后一页了！")
+        this.$dispatch('setMessage',"已经是最后一页了！")
+
+        return
+      }
+
+      this.$dispatch('changePage',this.currentPage + 1)
+    },
+
+    prev(){
+      if (this.currentPage <= 1) {
+        console.warn("已经是第一页了！")
+        this.$dispatch('setMessage',"已经是第一页了！")
+        return
+      }
+      this.$dispatch('changePage',this.currentPage - 1)
+    }
+  }
 }
+
+
 </script>
 
 <style lang="stylus" scoped>

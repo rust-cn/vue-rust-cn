@@ -13,6 +13,7 @@ import News from './pages/News'
 import Article from './pages/Article'
 import User from './pages/User'
 import Setting from './pages/Setting'
+import Node from './pages/Node'
 
 Vue.use(Router)
 
@@ -33,6 +34,11 @@ router.map({
         name: 'employment',
 
         component: Employment
+    },
+    '/node/:node_id': {
+        name: 'node',
+
+        component: Node
     },
     '/wiki': {
         name: 'wiki',

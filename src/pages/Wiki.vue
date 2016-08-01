@@ -8,22 +8,14 @@
       </div>
     </div>
 
-
-<!--     <div class="card text-center">
-      <div class="card-block">
-        <h3 class="lead ofade">空空如也!等待添加</h3>
-      </div>
-    </div> -->
-
-
     <div class="card animated slideInLeft" id="main_post_container">
         <div class="card-block">
           <div class="row">
              <div class="col-md-6 col-sm-12 col-xs-12">
-              <list></list>
+              <list :url="url" category="wiki1"></list>
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12">
-              <list></list>
+              <list :url="url" category="wiki2"></list>
             </div>
           </div>
 
@@ -36,37 +28,8 @@
         <div class="card-header text-center">
           站外资源
         </div>
-        <div class="card-block">
-          <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <a href="">重返20岁</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="">博物馆奇妙夜3</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="">第七子：降魔之战</a>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <ul class="list-group">
-                <li class="list-group-item">
-                  <a href="">重返20岁</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="">博物馆奇妙夜3</a>
-                </li>
-                <li class="list-group-item">
-                  <a href="">第七子：降魔之战</a>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-        </div>
+        <o-wiki></o-wiki>
 
     </div>
 
@@ -78,16 +41,18 @@
 import VNavBar from '../components/NavBar'
 import List from '../components/List'
 import VFooter from '../components/Footer'
+import OWiki from '../components/OtherWiki'
 
 export default {
   components:{
     VNavBar,
     List,
-    VFooter
+    VFooter,
+    OWiki
   },
   data () {
     return {
-
+      url: "https://api.local/wiki",
     }
   }
 }
